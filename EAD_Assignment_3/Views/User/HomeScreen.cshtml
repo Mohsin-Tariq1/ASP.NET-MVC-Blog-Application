@@ -1,0 +1,27 @@
+﻿@model List<EAD_Assignment_3.Models.Post>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<html>
+    <head>
+        <title>Home Page</title>
+        <link href="~/css/site.css" rel="stylesheet" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    </head>
+
+    <body class="bg-primary">*@
+<div class="p-1"><a asp-controller="Post" asp-action="PostForm" asp-route-id=@ViewBag.id class=" btn btn-dark ">Create Post</a></div>
+@if (Model.Count >= 1)
+{
+    @foreach (EAD_Assignment_3.Models.Post p in Model)
+    {
+        <div class="bg-warning rounded-pill border border-5 border border-dark">
+            <h2 class="text-center p-3"><a asp-controller="Post" asp-action="PostDetails" asp-route-id="@p.UserId">@p.Title</a></h2><br />
+            <p class="text-center">@p.Content</p>
+        </div>
+
+    }
+}
+@*</body>
+    </html>*@

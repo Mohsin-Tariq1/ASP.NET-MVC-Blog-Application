@@ -1,0 +1,44 @@
+﻿@using EAD_Assignment_3.Models
+@model User
+<html>
+<head>
+    <title>SignUp</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+</head>
+
+<body class="bg-success">
+
+    <form method="post" asp-action="SignUp" class="col g-3">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="col-md-4">
+            <label asp-for="Name" class="form-label"></label><br>
+            <input asp-for="Name" class="form-control"><br>
+            <span asp-validation-for="Name" class="alert-danger"></span>
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="Email" class="form-label"></label><br>
+            <input asp-for="Email" class="form-control"><br>
+            <span asp-validation-for="Email" class="alert-danger"></span>
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="Password" class="form-label"></label><br>
+            <input type="password" asp-for="Password" class="form-control"><br>
+            <span asp-validation-for="Password" class="alert-danger"></span>
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="Retype_Password" class="form-label"></label><br>
+            <input type="password" asp-for="Retype_Password" class="form-control"><br>
+            <span asp-validation-for="Retype_Password" class="alert-danger"></span>
+        </div>
+
+
+        <input type="submit" value="SignUp" class="btn badge-dark" />
+
+    </form>
+</body>
+</html>

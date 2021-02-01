@@ -1,0 +1,22 @@
+﻿@model EAD_Assignment_3.Models.Post
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<html>
+    <head>
+        <title>Post Details</title>
+        <link href="~/css/site.css" rel="stylesheet" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    </head>
+    <body class="bg-primary">*@
+<div class="text-center">
+    <div class="bg-warning rounded-pill border border-5 border border-dark">
+        <h2 class="text-center p-3">@Model.Title</h2><br />
+        <p class="text-center">@Model.Content</p>
+    </div>
+    <a class="btn btn-warning" asp-controller="Post" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-danger" asp-controller="Post" asp-action="Remove" asp-route-id="@Model.Id">Remove</a>
+</div>
+@*</body>
+    </html>*@

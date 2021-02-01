@@ -1,0 +1,32 @@
+﻿@using EAD_Assignment_3.Models
+@model User1
+<html>
+<head>
+    <title>SignIn</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+</head>
+
+<body class="bg-success">
+    <form method="post" asp-controller="User" asp-action="SignIn">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="bg-success">
+                <div class="col-md-4">
+                    <label asp-for="Name" class="form-label"></label><br>
+                    <input asp-for="Name" class="form-control"><br>
+                    <span asp-validation-for="Name" class="alert-danger"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Password" class="form-label"></label><br>
+                    <input type="password" asp-for="Password" class="form-control"><br>
+                    <span asp-validation-for="Password" class="alert-danger"></span>
+                </div>
+                <input type="submit" value="SignIn" class="btn badge-dark" />
+            </div>
+    </form>
+    <div>
+        <p>If Account doesn't exit then <a asp-controller="User" asp-action="SignUp" class="btn btn-dark">SignUp</a></p>
+    </div>
+</body>
+</html>

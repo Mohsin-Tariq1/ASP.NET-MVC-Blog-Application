@@ -1,0 +1,32 @@
+﻿@using EAD_Assignment_3.Models
+@model Post
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<html>
+<head>
+    <title>PostForm</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+</head>
+
+<body class="bg-info">*@
+
+    <form method="post" asp-action="PostForm">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="Title" class="form-label text-dark"></label><br>
+            <input asp-for="Title" class="form-control"><br>
+            <span asp-validation-for="Title" class="alert-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Content" class="form-label text-dark"></label><br>
+            <textarea rows="6" cols="20" asp-for="Content"></textarea><br>
+            <span asp-validation-for="Content" class="alert-danger"></span>
+        </div>
+
+        <input asp-route-id="@ViewBag.id" type="submit" value="POST" class="btn badge-dark" />
+    </form>
+@*</body>
+</html>*@
